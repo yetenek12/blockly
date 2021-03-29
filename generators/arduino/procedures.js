@@ -100,3 +100,7 @@ Blockly.Arduino.procedures_ifreturn = function() {
   code += '}\n';
   return code;
 };
+
+Blockly.Arduino.arduino_skeleton = function(){
+    return 'SETUP_LOOP'
+}
