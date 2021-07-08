@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * Visual Blocks Language
  *
@@ -44,6 +46,8 @@ Blockly.Arduino.variables_declare = function() {
   var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),
       Blockly.Variables.NAME_TYPE);
   Blockly.Arduino.setups_['setup_var' + varName] = varName + ' = ' + argument0 + ';\n';
+  
+//   console.log(varName, argument0)
   return '';
 };
 
@@ -53,5 +57,7 @@ Blockly.Arduino.variables_set = function() {
       Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
   var varName = Blockly.Arduino.variableDB_.getName(this.getFieldValue('VAR'),
       Blockly.Variables.NAME_TYPE);
+
+    // console.log(varName, argument0)
   return varName + ' = ' + argument0 + ';\n';
 };

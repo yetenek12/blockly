@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * Visual Blocks Language
  *

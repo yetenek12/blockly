@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * @license
  * Visual Blocks Editor
@@ -119,7 +121,7 @@ Blockly.Blocks['inout_digital_read'] = {
     this.appendDummyInput()
 	      .appendField("DigitalRead PIN#")
 	      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-    this.setOutput(true, 'Boolean');
+    this.setOutput(true, 'Number');
     this.setTooltip('');
   }
 };
@@ -190,7 +192,7 @@ Blockly.Blocks['inout_highlow'] = {
     this.setColour(230);
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
-    this.setOutput(true, 'Boolean');
+    this.setOutput(true, 'Number');
     this.setTooltip('');
   }
 };
