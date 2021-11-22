@@ -67,6 +67,7 @@ Blockly.Arduino.finish = function(code) {
     // include statements
     var includes = ''
     includes += '#include <Arduino.h>\n'
+    includes += '#include <YETENEK12.h>\n'
     includes += '\n'
 
     // variable declerations

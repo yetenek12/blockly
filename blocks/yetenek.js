@@ -38,7 +38,86 @@ Blockly.Blocks['variables_type'] = {
    this.setTooltip("Değişkenin türünü belirle.");
    this.setHelpUrl("");
     }
+};
+
+Blockly.Blocks['y12_init'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("YETENEK Kitini Başlat")
+          .appendField(new Blockly.FieldDropdown([["I2C","I2C"], ["MODBUS","MODBUS"]]), "COMM");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['y12_get_digital_io'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+          .appendField("renkli IO kartının")
+          .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"], ["5","PIN_5"], ["6","PIN_6"], ["7","PIN_7"], ["8","PIN_8"]]), "PIN")
+          .appendField("numaralı dijital pininin değeri");
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
   };
+
+  Blockly.Blocks['y12_set_digital_io'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+          .appendField("renkli IO kartının")
+          .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"], ["5","PIN_5"], ["6","PIN_6"], ["7","PIN_7"], ["8","PIN_8"]]), "PIN")
+          .appendField("numaralı dijital pininin değerini");
+      this.appendValueInput("VALUE")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("yap");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['y12_get_adc'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+          .appendField("renkli IO kartının")
+          .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"]]), "PIN")
+          .appendField("numaralı analog pininin değeri");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['y12_get_adc_voltage'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+          .appendField("renkli IO kartının")
+          .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"]]), "PIN")
+          .appendField("numaralı analog pininin voltaj değeri");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
 
 // ================================================================================================
 // ================================================================================================
