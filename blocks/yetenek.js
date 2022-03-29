@@ -78,7 +78,7 @@ Blockly.Blocks['y12_mb_temperature'] = {
 	}
 };
 
-  Blockly.Blocks['y12_mb_button'] = {
+Blockly.Blocks['y12_mb_button'] = {
 	init: function() {
 		this.appendDummyInput()
 			.appendField("Ana kart üzerindeki ")
@@ -200,8 +200,6 @@ Blockly.Blocks['y12_mb_screen_text'] = {
 };
 
 
-
-
 // IO Kart
 
 Blockly.Blocks['y12_get_digital_io'] = {
@@ -218,457 +216,474 @@ Blockly.Blocks['y12_get_digital_io'] = {
 	}
 };
 
-  Blockly.Blocks['y12_set_digital_io'] = {
+Blockly.Blocks['y12_set_digital_io'] = {
 	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		  .appendField("renkli IO kartının")
-		  .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"], ["5","PIN_5"], ["6","PIN_6"], ["7","PIN_7"], ["8","PIN_8"]]), "PIN")
-		  .appendField("numaralı dijital pininin değerini");
-	  this.appendValueInput("VALUE")
-		  .setCheck(null);
-	  this.appendDummyInput()
-		  .appendField("yap");
-	  this.setInputsInline(true);
-	  this.setPreviousStatement(true, null);
-	  this.setNextStatement(true, null);
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli IO kartının")
+			.appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"], ["5","PIN_5"], ["6","PIN_6"], ["7","PIN_7"], ["8","PIN_8"]]), "PIN")
+			.appendField("numaralı dijital pininin değerini");
+		this.appendValueInput("VALUE")
+			.setCheck(null);
+		this.appendDummyInput()
+			.appendField("yap");
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
+};
 
-  Blockly.Blocks['y12_get_adc'] = {
+Blockly.Blocks['y12_get_adc'] = {
 	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		  .appendField("renkli IO kartının")
-		  .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"]]), "PIN")
-		  .appendField("numaralı analog pininin değeri");
-	  this.setInputsInline(true);
-	  this.setOutput(true, null);
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli IO kartının")
+			.appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"]]), "PIN")
+			.appendField("numaralı analog pininin değeri");
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
+};
 
-  Blockly.Blocks['y12_get_adc_voltage'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		  .appendField("renkli IO kartının")
-		  .appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"]]), "PIN")
-		  .appendField("numaralı analog pininin voltaj değeri");
-	  this.setInputsInline(true);
-	  this.setOutput(true, null);
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };
-
-
-
-  Blockly.Blocks['y12_get_air_temperature'] = {
+Blockly.Blocks['y12_get_adc_voltage'] = {
 	init: function() {
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan hava sıcaklığını oku")
+		.appendField("renkli IO kartının")
+		.appendField(new Blockly.FieldDropdown([["1","PIN_1"], ["2","PIN_2"], ["3","PIN_3"], ["4","PIN_4"]]), "PIN")
+		.appendField("numaralı analog pininin voltaj değeri");
 	this.setInputsInline(true);
 	this.setOutput(true, null);
 	this.setColour(230);
 	this.setTooltip("");
 	this.setHelpUrl("");
 	}
-  };
+};
 
-  Blockly.Blocks['y12_get_air_humidity'] = {
+Blockly.Blocks['y12_io_addr_change'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan hava nem seviyesini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli IO kartının rengini")
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "NEWADDR")
+			.appendField("yap")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-
-  Blockly.Blocks['y12_get_air_pressure'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan açık hava basıncını oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-
-  Blockly.Blocks['y12_get_altitude'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan deniz seviyesinden yüksekliği oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
+};
 
 
-  Blockly.Blocks['y12_get_mic_db'] = {
+// Cevresel Olcum Sensoru
+
+Blockly.Blocks['y12_get_air_temperature'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan ses seviyesini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan hava sıcaklığını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  Blockly.Blocks['y12_get_mic_hz'] = {
+};
+
+Blockly.Blocks['y12_get_air_humidity'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan ses frekansını oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan hava nem seviyesini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  Blockly.Blocks['y12_get_co2'] = {
+};
+
+Blockly.Blocks['y12_get_air_pressure'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan CO2 seviyesini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan açık hava basıncını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  Blockly.Blocks['y12_get_tvoc'] = {
+};
+
+Blockly.Blocks['y12_set_sea_level'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan TVOC seviyesini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli probun deniz seviyesinde hava basıncı")
+		this.appendValueInput("HBAR")
+			.setCheck(null);
+		this.appendDummyInput()
+			.appendField("hBar'dır")
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  Blockly.Blocks['y12_get_H2'] = {
+};
+
+Blockly.Blocks['y12_get_altitude'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan H2 seviyesini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan deniz seviyesinden yüksekliği oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  Blockly.Blocks['y12_get_ethanol'] = {
+};
+
+Blockly.Blocks['y12_get_mic_db'] = {
 	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan ethanol seviyesini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan ses seviyesini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
+};
+
+Blockly.Blocks['y12_get_mic_hz'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan ses frekansını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_co2'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan CO2 seviyesini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_tvoc'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan TVOC seviyesini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_H2'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan H2 seviyesini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_ethanol'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan ethanol seviyesini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_air_addr_change'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probunun rengini")
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "NEWADDR")
+			.appendField("yap")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
 
 
+// Optik Sensor
+
+Blockly.Blocks['y12_get_distance'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan uzaklığı oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_uva'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan UV A değerini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_uvb'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan UV B değerini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_uv_index'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan UV indeksini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_color_red'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan kırmızı renginin yansımasını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_color_green'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan yeşil renginin yansımasını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_color_blue'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan mavi renginin yansımasını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_color_temp'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan renk sıcaklığını oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_color_lux'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan ışık şiddetini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_get_ir'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probunun karşısında cisim algılandı mı?")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
+Blockly.Blocks['y12_optic_addr_change'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probunun rengini")
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "NEWADDR")
+			.appendField("yap")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
 
 
-  Blockly.Blocks['y12_get_distance'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan uzaklığı oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_uva'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan UV A değerini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_uvb'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan UV B değerini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_uv_index'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan UV indeksini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_color_red'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan kırmızı renginin yansımasını oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_color_green'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan yeşil renginin yansımasını oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_color_blue'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan mavi renginin yansımasını oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_color_temp'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan renk sıcaklığını oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_color_lux'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probundan ışık şiddetini oku")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
-  Blockly.Blocks['y12_get_ir'] = {
-	init: function() {
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
-		.appendField("renkli sensor probunun karşısında cisim algılandı mı?")
-	this.setInputsInline(true);
-	this.setOutput(true, null);
-	this.setColour(230);
-	this.setTooltip("");
-	this.setHelpUrl("");
-	}
-  };
+// Sicaklik Probu
 
+Blockly.Blocks['y12_temp_temp'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan sıcaklık değeri oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
 
+Blockly.Blocks['y12_temp_addr_change'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probunun rengini")
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "NEWADDR")
+			.appendField("yap")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
 
-// ================================================================================================
-// ================================================================================================
+// Ivme Sensoru
 
-Blockly.Blocks['renk_1'] = {
+Blockly.Blocks['y12_imu_accel'] = {
 	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Renk sensörü")
-		  .appendField(new Blockly.FieldColour("#ff0000"), "color")
-		  .appendField("renginde mi?");
-	  this.setInputsInline(true);
-	  this.setOutput(true, "Boolean");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan")
+			.appendField(new Blockly.FieldDropdown([["X","X"], ["Y","Y"], ["Z","Z"]]), "AXIS")
+			.appendField("eksenindeki doğrusal ivme değerini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  
-  Blockly.Blocks['renk_2'] = {
+};
+
+Blockly.Blocks['y12_imu_gyro'] = {
 	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensor_id")
-		  .appendField("Renk sensörü değeri");
-	  this.setOutput(true, "String");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan")
+			.appendField(new Blockly.FieldDropdown([["X","X"], ["Y","Y"], ["Z","Z"]]), "AXIS")
+			.appendField("eksenindeki açısal hız değerini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  
-  Blockly.Blocks['renk_3'] = {
+};
+
+Blockly.Blocks['y12_imu_mag'] = {
 	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Yansıyan ışık değeri")
-		  .appendField(new Blockly.FieldDropdown([["<","<"], ["=","="], [">",">"]]), "operator")
-		  .appendField("%")
-		  .appendField(new Blockly.FieldNumber(50, 0, 100), "percent")
-		  .appendField("mi?");
-	  this.setOutput(true, "Boolean");
-	  this.setColour(230);
-   this.setTooltip("Işık sensörü");
-   this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probundan")
+			.appendField(new Blockly.FieldDropdown([["X","X"], ["Y","Y"], ["Z","Z"]]), "AXIS")
+			.appendField("eksenindeki manyetik alan değerini oku")
+		this.setInputsInline(true);
+		this.setOutput(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  
-  Blockly.Blocks['renk_4'] = {
+};
+
+Blockly.Blocks['y12_imu_addr_change'] = {
 	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Yansıyan ışık değeri");
-	  this.setOutput(true, "Number");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "ADDR")
+			.appendField("renkli sensor probunun rengini")
+			.appendField(new Blockly.FieldDropdown([["Yeşil","ADDR_1"], ["Mavi","ADDR_2"], ["Turuncu","ADDR_3"], ["Sarı","ADDR_4"], ["Turkuaz","ADDR_5"], ["Mor","ADDR_6"]]), "NEWADDR")
+			.appendField("yap")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
 	}
-  };
-  
-  Blockly.Blocks['tof_1'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("mesafe: ")
-		  .appendField(new Blockly.FieldDropdown([["daha yakın","closer"], ["daha uzak","further"], ["tam olarak","exactly"]]), "NAME")
-		  .appendField(new Blockly.FieldNumber(10, 0), "value")
-		  .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inc","inc"], ["%","percent"]]), "unit");
-	  this.setOutput(true, "Boolean");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };
-  
-  Blockly.Blocks['tof_2'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("mesafe")
-		  .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inc","inc"], ["%","percent"]]), "unit")
-		  .appendField("olarak");
-	  this.setOutput(true, null);
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };
-  
-  Blockly.Blocks['sound_1'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Ses şiddeti (dB)");
-	  this.setOutput(true, "Number");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };
-  
-  Blockly.Blocks['sound_2'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Ses şiddeti (dB)")
-		  .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "option")
-		  .appendField(new Blockly.FieldNumber(0), "value")
-		  .appendField("mi?");
-	  this.setOutput(true, "Boolean");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };
-  
-  Blockly.Blocks['sound_3'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Ses frekansı (hz)")
-		  .appendField(new Blockly.FieldDropdown([[">",">"], ["<","<"], ["=","="]]), "option")
-		  .appendField(new Blockly.FieldNumber(0, 0), "NAME")
-		  .appendField("mi?");
-	  this.setOutput(true, "Boolean");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };
-  
-  Blockly.Blocks['sound_4'] = {
-	init: function() {
-	  this.appendDummyInput()
-		  .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, { alt: "*", flipRtl: "FALSE" }))
-		  .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"]]), "sensorID")
-		  .appendField("Ses frekansı (hz)");
-	  this.setOutput(true, "Number");
-	  this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-	}
-  };	
+};

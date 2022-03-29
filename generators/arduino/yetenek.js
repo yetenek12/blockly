@@ -17,15 +17,15 @@ Blockly.Arduino.variables_type = function(){
 	return '';
 }
 
+
+// Ana Kart
+
 Blockly.Arduino.y12_init = function(){
 	var comm = this.getFieldValue('COMM');
 	var commId = -1;
 	if(comm == 'I2C') commId = 0;
 	else if(comm == 'MODBUS') commId = 1;
-
 	Blockly.Arduino.setups_['setup_init'] = 'yetenek.init(' + commId + ');';
-	// var code = 'digitalWrite(' + dropdown_pin + ', ' + dropdown_stat + ');\n'
-	// return code;
 	return '';
 }
 
@@ -34,7 +34,6 @@ Blockly.Arduino.y12_mb_buzzer = function(){
 	var commId = -1;
 	if(comm == '1') commId = 1;
 	else if(comm == '0') commId = 0;
-
 	var code = 'yetenek.setBuzzer(' + commId + ');\n'
 	return code;
 }
@@ -49,7 +48,6 @@ Blockly.Arduino.y12_mb_button = function(){
 	var commId = -1;
 	if(comm == '1') commId = 1;
 	else if(comm == '2') commId = 2;
-
 	var code = 'yetenek.readButton(' + commId + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
@@ -59,7 +57,6 @@ Blockly.Arduino.y12_mb_led = function(){
 	var commId = -1;
 	if(comm == '1') commId = 1;
 	else if(comm == '0') commId = 0;
-
 	var code = 'yetenek.setLed(' + commId + ');\n'
 	return code;
 }
@@ -95,7 +92,7 @@ Blockly.Arduino.y12_mb_screen_text = function(){
 }
 
 
-
+// IO Kart
 
 
 Blockly.Arduino.y12_get_digital_io = function(){
@@ -144,146 +141,271 @@ Blockly.Arduino.y12_get_adc_voltage = function(){
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
 
+Blockly.Arduino.y12_io_addr_change = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var newAddrValue = this.getFieldValue('NEWADDR');
+	var addr = addrValue.split('_')[1];
+	var newAddr = newAddrValue.split('_')[1];
+	var code = 'yetenek.setAddress(1, '+addr+', '+newAddr+');\n'
+	return code;
+}
+
+// Cevresel Olcum
+
 Blockly.Arduino.y12_get_air_temperature = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getAirTemperature(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_air_humidity = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getAirHumidity(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_air_pressure = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getAirPressure(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
+Blockly.Arduino.y12_set_sea_level = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var addr = addrValue.split('_')[1];
+	var hbar = Blockly.Arduino.valueToCode(this, 'HBAR', Blockly.Arduino.ORDER_ATOMIC) || '1023';
+	var code = 'yetenek.setSeaLevel(' + addr + ', '+hbar+');\n'
+	return code;
+}
+
 Blockly.Arduino.y12_get_altitude = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getAltitude(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_mic_db = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getMicrophoneFrequency(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_mic_hz = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getMicrophoneAmplitude(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_co2 = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getCO2(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_tvoc = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getTVOC(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_H2 = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getH2(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_ethanol = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getEthanol(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
 
+Blockly.Arduino.y12_air_addr_change = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var newAddrValue = this.getFieldValue('NEWADDR');
+	var addr = addrValue.split('_')[1];
+	var newAddr = newAddrValue.split('_')[1];
+	var code = 'yetenek.setAddress(2, '+addr+', '+newAddr+');\n'
+	return code;
+}
+
+
+// Optik Sensor
 
 
 Blockly.Arduino.y12_get_distance = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getDistance(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_uva = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getUVA(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_uvb = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getUVB(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_uv_index = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getUVIndex(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_color_red = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getColorRed(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_color_green = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getColorGreen(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_color_blue = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getColorBlue(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_color_temp = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getColorTemp(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_color_lux = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getColorLux(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 }
+
 Blockly.Arduino.y12_get_ir = function(){
 	var addrValue = this.getFieldValue('ADDR');
 	var addr = addrValue.split('_')[1];
-
 	var code = 'yetenek.getIRSensor(' + addr + ')'
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
+}
+
+Blockly.Arduino.y12_optic_addr_change = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var newAddrValue = this.getFieldValue('NEWADDR');
+	var addr = addrValue.split('_')[1];
+	var newAddr = newAddrValue.split('_')[1];
+	var code = 'yetenek.setAddress(3, '+addr+', '+newAddr+');\n'
+	return code;
+}
+
+
+// Sicaklik Probu
+
+Blockly.Arduino.y12_temp_temp = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var addr = addrValue.split('_')[1];
+	var code = 'yetenek.getTempProbe(' + addr + ')'
+	return [code, Blockly.Arduino.ORDER_ATOMIC];
+}
+
+Blockly.Arduino.y12_temp_addr_change = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var newAddrValue = this.getFieldValue('NEWADDR');
+	var addr = addrValue.split('_')[1];
+	var newAddr = newAddrValue.split('_')[1];
+	var code = 'yetenek.setAddress(5, '+addr+', '+newAddr+');\n'
+	return code;
+}
+
+
+// Ivme Sensoru
+
+Blockly.Arduino.y12_imu_accel = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var addr = addrValue.split('_')[1];
+	var axisValue = this.getFieldValue('AXIS');
+	switch (axisValue) {
+		case "X":
+			var code = 'yetenek.getAccelX(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		case "Y":
+			var code = 'yetenek.getAccelY(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		case "Z":
+			var code = 'yetenek.getAccelZ(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		default:
+			break;
+	}
+}
+
+Blockly.Arduino.y12_imu_gyro = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var addr = addrValue.split('_')[1];
+	var axisValue = this.getFieldValue('AXIS');
+	switch (axisValue) {
+		case "X":
+			var code = 'yetenek.getGyroX(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		case "Y":
+			var code = 'yetenek.getGyroY(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		case "Z":
+			var code = 'yetenek.getGyroZ(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		default:
+			break;
+	}
+}
+
+Blockly.Arduino.y12_imu_mag = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var addr = addrValue.split('_')[1];
+	var axisValue = this.getFieldValue('AXIS');
+	switch (axisValue) {
+		case "X":
+			var code = 'yetenek.getMagX(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		case "Y":
+			var code = 'yetenek.getMagY(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		case "Z":
+			var code = 'yetenek.getMagZ(' + addr + ')'
+			return [code, Blockly.Arduino.ORDER_ATOMIC];
+		default:
+			break;
+	}
+}
+
+Blockly.Arduino.y12_imu_addr_change = function(){
+	var addrValue = this.getFieldValue('ADDR');
+	var newAddrValue = this.getFieldValue('NEWADDR');
+	var addr = addrValue.split('_')[1];
+	var newAddr = newAddrValue.split('_')[1];
+	var code = 'yetenek.setAddress(4, '+addr+', '+newAddr+');\n'
+	return code;
 }
