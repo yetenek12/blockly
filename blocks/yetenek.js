@@ -162,6 +162,18 @@ Blockly.Blocks['y12_mb_show_screen'] = {
 	}
 };
 
+Blockly.Blocks['y12_mb_screen_new_line'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField("Ana kart üzerindeki ekranda yeni satıra geç")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
 Blockly.Blocks['y12_mb_screen_text'] = {
 	init: function() {
 		

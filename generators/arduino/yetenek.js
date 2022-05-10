@@ -81,6 +81,11 @@ Blockly.Arduino.y12_mb_show_screen = function(){
 	return code;
 }
 
+Blockly.Arduino.y12_mb_screen_new_line = function(){	
+	var code = 'yetenek.screenNewLine();\n';
+	return code;
+}
+
 Blockly.Arduino.y12_mb_screen_text = function(){	
 	var text = Blockly.Arduino.valueToCode(this, 'TEXT', Blockly.Arduino.ORDER_ATOMIC) || '""';
 	var size = this.getFieldValue('SIZE');
