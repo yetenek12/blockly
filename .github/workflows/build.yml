@@ -36,11 +36,27 @@ jobs:
         shell: bash
         
       - name: generate branch name
-        run: echo BRANCH=build--$(date +%s) >> $GITHUB_ENV
+        run: echo BRANCH=build-$(date +%s) >> $GITHUB_ENV
         
       - uses: EndBug/add-and-commit@v9
+        id: commit
         with:
           author_name: GitHub CI
           author_email: contact@kaaninan.net
           message: 'CI build'
           new_branch: ${{ env.BRANCH }}
+          
+      - name: Output
+        run: echo ${{ steps.commit.outputs.pushed }}
+        shell: bash
+          
+      - name: Pull Request
+        if: ${{ steps.commit.outputs.pushed }}
+        uses: devops-infra/action-pull-request@v0.4.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ env.BRANCH }}
+          target_branch: master
+          title: Build PR
+          template: .github/PULL_REQUEST_TEMPLATE.md
+          body: "**Automated pull request**"
