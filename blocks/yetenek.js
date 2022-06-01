@@ -150,6 +150,18 @@ Blockly.Blocks['y12_mb_clear_screen'] = {
 	}
 };
 
+Blockly.Blocks['y12_test'] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField("Test")
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(230);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
+
 Blockly.Blocks['y12_mb_show_screen'] = {
 	init: function() {
 		this.appendDummyInput()
