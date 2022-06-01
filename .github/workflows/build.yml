@@ -28,7 +28,7 @@ jobs:
             node-version: '16'
       
       - name: Install Dependencies
-        run: npm install --also=dev
+        run: npm ci
         shell: bash
         
       - name: Build
@@ -40,7 +40,6 @@ jobs:
         
       - uses: EndBug/add-and-commit@v9
         with:
-          add: 'src'
           author_name: GitHub CI
           author_email: contact@kaaninan.net
           message: 'CI build'
